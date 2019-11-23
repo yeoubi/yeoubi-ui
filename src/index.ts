@@ -4,4 +4,5 @@ export {
   Heading,
   Body,
   Box,
+  Flex,
 } from './internal';

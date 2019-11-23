@@ -14,3 +14,4 @@ export * from './components/Space'
 export * from './components/Heading';
 export * from './components/Body';
 export * from './components/Box';
+export * from './components/Flex';

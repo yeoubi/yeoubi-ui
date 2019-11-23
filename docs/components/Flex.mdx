@@ -1,0 +1,181 @@
+---
+menu: Components
+name: Flex
+route: /components/flex
+---
+
+import {
+  Playground,
+  Props,
+} from 'docz';
+import {
+  Flex,
+  Body,
+  Space,
+  Size,
+} from '@yeoubi/ui';
+
+# Flex
+
+다른 콘텐츠를 감싸는 `<Flex />` 컴포넌트입니다. `<Box />` 컴포넌트와 비슷하지만 세세한 정렬 기능이 있습니다.
+
+<Props of={Flex} />
+
+## Usage
+
+<Playground>
+  <Flex>
+    <Body level={2}>
+      Lorem Ipsum
+    </Body>
+  </Flex>
+</Playground>
+
+## inline
+
+<Playground>
+  <Space p={8} mr={8} mb={8}>
+    <Flex bgColor="#000">
+      <Body color="#FFF" level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+  <Space p={8}>
+    <Flex bgColor="#000" inline>
+      <Body color="#FFF" level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+</Playground>
+
+
+## Direction
+
+콘텐츠를 가로 또는 세로로 정렬할 수 있습니다.
+
+<Playground>
+  <Space p={8} mb={8}>
+    <Flex bgColor="#F1F1F1">
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+  <Space p={8}>
+    <Flex bgColor="#F1F1F1" vertical>
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+</Playground>
+
+## Justify & Align
+
+콘텐츠를 가운데, 좌측, 우측 및 상, 하단으로 정렬할 수 있습니다.
+
+<Playground>
+  <Space p={8} mb={8}>
+    <Flex bgColor="#F1F1F1" hstart>
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+  <Space p={8} mb={8}>
+    <Flex bgColor="#F1F1F1" hcenter>
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+  <Space p={8} mb={8}>
+    <Flex bgColor="#F1F1F1" hend>
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+  <Space p={8} mb={8}>
+    <Flex bgColor="#F1F1F1" between>
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+  <Space p={8} mb={8}>
+    <Flex bgColor="#F1F1F1" around>
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+      <Body level={2}>
+        Lorem Ipsum
+      </Body>
+    </Flex>
+  </Space>
+  <Space p={8} mb={8}>
+    <Size height={100}>
+      <Flex bgColor="#F1F1F1" vertical vstart>
+        <Body level={2}>
+          Lorem Ipsum
+        </Body>
+      </Flex>
+    </Size>
+  </Space>
+  <Space p={8} mb={8}>
+    <Size height={100}>
+      <Flex bgColor="#F1F1F1" vertical vcenter>
+        <Body level={2}>
+          Lorem Ipsum
+        </Body>
+      </Flex>
+    </Size>
+  </Space>
+  <Space p={8} mb={8}>
+    <Size height={100}>
+      <Flex bgColor="#F1F1F1" vertical vend>
+        <Body level={2}>
+          Lorem Ipsum
+        </Body>
+      </Flex>
+    </Size>
+  </Space>
+  <Space p={8} mb={8}>
+    <Size height={100}>
+      <Flex bgColor="#F1F1F1" center>
+        <Body level={2}>
+          Lorem Ipsum
+        </Body>
+      </Flex>
+    </Size>
+  </Space>
+  <Space p={8} mb={8}>
+    <Size height={100}>
+      <Flex bgColor="#F1F1F1" vertical between>
+        <Body level={2}>
+          Lorem Ipsum
+        </Body>
+        <Body level={2}>
+          Lorem Ipsum
+        </Body>
+      </Flex>
+    </Size>
+  </Space>
+  <Space p={8}>
+    <Size height={100}>
+      <Flex bgColor="#F1F1F1" vertical around>
+        <Body level={2}>
+          Lorem Ipsum
+        </Body>
+        <Body level={2}>
+          Lorem Ipsum
+        </Body>
+      </Flex>
+    </Size>
+  </Space>
+</Playground>
