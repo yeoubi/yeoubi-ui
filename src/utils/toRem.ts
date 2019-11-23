@@ -1,4 +1,4 @@
-import { StyleValue } from '..';
+import { StyleValue } from '../internal';
 
 export const toRem = (...args: StyleValue[]) => {
   const value = args.filter(arg => arg !== undefined)[0];

@@ -4,7 +4,7 @@ import {
   removeNonHTMLProps,
   toRem,
   StyleValue,
-} from '..';
+} from '../internal';
 
 export interface SizeProps {
   width?: StyleValue;
@@ -16,7 +16,7 @@ export interface SizeProps {
   children: React.ReactElement;
 }
 
-const Container = styled<React.FunctionComponent<SizeProps>>(({
+export const Size = styled<React.FunctionComponent<SizeProps>>(({
   children,
   ...props
 }) => React.cloneElement(children as any, removeNonHTMLProps(props)))`
@@ -27,5 +27,3 @@ const Container = styled<React.FunctionComponent<SizeProps>>(({
   min-height: ${props => props.minHeight && toRem(props.minHeight)};
   max-height: ${props => props.maxHeight && toRem(props.maxHeight)};
 `;
-
-export const Size = React.memo(Container);

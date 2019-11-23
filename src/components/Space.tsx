@@ -4,7 +4,7 @@ import {
   removeNonHTMLProps,
   toRem,
   StyleValue,
-} from '..';
+} from '../internal';
 
 export interface SpaceProps {
   p?: StyleValue;
@@ -21,11 +21,6 @@ export interface SpaceProps {
   mr?: StyleValue;
   mv?: StyleValue;
   mh?: StyleValue;
-  top?: StyleValue;
-  bottom?: StyleValue;
-  left?: StyleValue;
-  right?: StyleValue;
-  zIndex?: StyleValue;
   children: React.ReactElement;
 }
 
@@ -44,17 +39,10 @@ const getSpaceValue = (
     toRem(all, horizontal, left, 0)
   ].join(' ');
 
-const Container = styled<React.FunctionComponent<SpaceProps>>(({
+export const Space = styled<React.FunctionComponent<SpaceProps>>(({
   children,
   ...props
 }) => React.cloneElement(children as any, removeNonHTMLProps(props)))`
   padding: ${({ p, pt, pr, pb, pl, pv, ph }) => getSpaceValue(p, pt, pr, pb, pl, pv, ph)};
   margin: ${({ m, mt, mr, mb, ml, mv, mh }) => getSpaceValue(m, mt, mr, mb, ml, mv, mh)};
-  top: ${({ top }) => top};
-  bottom: ${({ bottom }) => bottom};
-  left: ${({ left }) => left};
-  right: ${({ right }) => right};
-  z-index: ${({ zIndex }) => zIndex};
 `;
-
-export const Space = React.memo(Container);
