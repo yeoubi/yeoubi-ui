@@ -1,5 +1,8 @@
 import { css } from 'styled-components';
-import { StyleValue } from '../internal';
+import {
+  toRem,
+  StyleValue,
+} from '../internal';
 
 export interface PositionProps {
   position?: 'absolute' | 'fixed' | 'relative';
@@ -12,9 +15,9 @@ export interface PositionProps {
 
 export const Position = css<PositionProps>`
   position: ${props => props.position || 'relative'};
-  top: ${props => props.top};
-  bottom: ${props => props.bottom};
-  left: ${props => props.left};
-  right: ${props => props.right};
+  top: ${props => toRem(props.top)};
+  bottom: ${props => toRem(props.bottom)};
+  left: ${props => toRem(props.left)};
+  right: ${props => toRem(props.right)};
   z-index: ${props => props.zIndex};
 `;

@@ -5,7 +5,7 @@ export default {
   typescript: true,
   menu: [
     'Yeoubi UI',
-    'Core',
+    'Components',
   ],
   themeConfig: {
     showPlaygroundEditor: true,
