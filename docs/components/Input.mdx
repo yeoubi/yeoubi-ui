@@ -1,0 +1,30 @@
+---
+menu: Components
+name: Input
+route: /components/Input
+---
+
+import {
+  Playground,
+  Props,
+} from 'docz';
+import {
+  Input,
+  Space,
+} from '@yeoubi/ui';
+
+# Input
+
+<Props of={Input} />
+
+## Usage
+
+<Playground>
+  <Space mr={8}>
+    <Input level={1} placeholder="lorem ipsum" bgColor="#F7F7F7" />
+  </Space>
+  <Input level={1} placeholder="lorem ipsum" bgColor="#F7F7F7" password />
+  <Space mt={8}>
+    <Input level={1} placeholder="lorem ipsum" bgColor="#F7F7F7" full />
+  </Space>
+</Playground>

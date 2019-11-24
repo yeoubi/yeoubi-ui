@@ -8,4 +8,5 @@ export {
   Flex,
   Image,
   Button,
+  Input,
 } from './internal';
