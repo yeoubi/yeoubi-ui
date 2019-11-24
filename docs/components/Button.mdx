@@ -1,0 +1,57 @@
+---
+menu: Components
+name: Button
+route: /components/button
+---
+
+import {
+  Playground,
+  Props,
+} from 'docz';
+import {
+  Button,
+  Space,
+} from '@yeoubi/ui';
+
+# Button
+
+버튼 또는 링크로 사용할 수 있는 컴포넌트입니다.
+
+<Props of={Button} />
+
+## Usage
+
+<Playground>
+  <Space pv={8} ph={16} mr={8}>
+    <Button level={1} color="#FFF" bgColor="#1A1A1A">
+      Lorem Ipsum
+    </Button>
+  </Space>
+  <Space pv={8} ph={16} mr={8}>
+    <Button level={2} color="#FFF" bgColor="#DA5746" borderRadius={4}>
+      Lorem Ipsum
+    </Button>
+  </Space>
+  <Space pv={8} ph={16} mr={8}>
+    <Button level={3} color="#FFF" bgColor="#1A1A1A">
+      Lorem Ipsum
+    </Button>
+  </Space>
+  <Space pv={8} ph={16} mt={8}>
+    <Button level={1} color="#FFF" bgColor="#1A1A1A" full>
+      Lorem Ipsum
+    </Button>
+  </Space>
+</Playground>
+
+## Use as anchor
+
+`to`, `href` 속성을 넣어 `<a>` 태그로 사용할 수 있습니다. 앱 내 페이지에는 `to`, 외부 페이지에는 `href`를 사용하세요.
+
+<Playground>
+  <Space pv={8} ph={16}>
+    <Button href="/components/button#usage" level={1} color="#FFF" bgColor="#1A1A1A">
+      Lorem Ipsum
+    </Button>
+  </Space>
+</Playground>

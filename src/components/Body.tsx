@@ -26,11 +26,11 @@ export const BODY_STYLE: {
   `,
 };
 
-interface Props {
+type Props = TypographyProps & {
   level: number;
 }
 
-export const Body = styled<React.FunctionComponent<Props & TypographyProps>>((
+export const Body = styled<React.FunctionComponent<Props>>((
   props,
 ) => React.createElement('div', removeNonHTMLProps(props)))`
   margin: 0;

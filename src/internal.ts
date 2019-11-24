@@ -1,4 +1,5 @@
 export * from './common/interfaces';
+export * from './common/GlobalStyle';
 
 export * from './utils/removeNonHtmlProps';
 export * from './utils/toRem';
@@ -15,3 +16,5 @@ export * from './components/Heading';
 export * from './components/Body';
 export * from './components/Box';
 export * from './components/Flex';
+export * from './components/Image';
+export * from './components/Button';
