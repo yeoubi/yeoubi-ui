@@ -29,6 +29,16 @@ const INVALID_PROPS = [
   'level',
   'password',
   'bgImage',
+  'vertical',
+  'hstart',
+  'hcenter',
+  'hend',
+  'vstart',
+  'vcenter',
+  'vend',
+  'center',
+  'between',
+  'around',
 ];
 
 export const removeNonHTMLProps = (
