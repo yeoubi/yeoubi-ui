@@ -5,18 +5,19 @@ import {
   CommonProps,
   Border,
   BorderProps,
-  Background,
-  BackgroundProps,
   Position,
   PositionProps,
   HTMLImageProps,
   removeNonHTMLProps,
 } from '../internal';
 
-type Props = CommonProps & BorderProps & BackgroundProps & PositionProps & HTMLImageProps & {
-  src: string;
-  fit?: 'cover' | 'contain' | 'fill';
-}
+type Props = CommonProps &
+  BorderProps &
+  PositionProps &
+  HTMLImageProps & {
+    src: string;
+    fit?: 'cover' | 'contain' | 'fill';
+  };
 
 export const Image = styled<React.FunctionComponent<Props>>((
   props,
@@ -24,7 +25,6 @@ export const Image = styled<React.FunctionComponent<Props>>((
   object-fit: ${props => props.fit || 'none'};
   ${Common}
   ${Border}
-  ${Background}
   ${Position}
 `;
 

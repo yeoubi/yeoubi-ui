@@ -12,9 +12,12 @@ import {
   removeNonHTMLProps,
 } from '../internal';
 
-type Props = CommonProps & BorderProps & BackgroundProps & PositionProps & {
-  inline?: boolean;
-}
+type Props = CommonProps &
+  BorderProps &
+  BackgroundProps &
+  PositionProps & {
+    inline?: boolean;
+  };
 
 export const Box = styled<React.FunctionComponent<Props>>((
   props

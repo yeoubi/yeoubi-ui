@@ -12,19 +12,22 @@ import {
   removeNonHTMLProps,
 } from '../internal';
 
-type Props = CommonProps & BorderProps & BackgroundProps & PositionProps & {
-  inline?: boolean;
-  vertical?: boolean;
-  center?: boolean;
-  vcenter?: boolean;
-  vstart?: boolean;
-  vend?: boolean;
-  hcenter?: boolean;
-  hstart?: boolean;
-  hend?: boolean;
-  between?: boolean;
-  around?: boolean;
-}
+type Props = CommonProps &
+  BorderProps &
+  BackgroundProps &
+  PositionProps & {
+    inline?: boolean;
+    vertical?: boolean;
+    center?: boolean;
+    vcenter?: boolean;
+    vstart?: boolean;
+    vend?: boolean;
+    hcenter?: boolean;
+    hstart?: boolean;
+    hend?: boolean;
+    between?: boolean;
+    around?: boolean;
+  };
 
 export const Flex = styled<React.FunctionComponent<Props>>((
   props,

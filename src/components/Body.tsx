@@ -28,7 +28,7 @@ export const BODY_STYLE: {
 
 type Props = TypographyProps & {
   level: number;
-}
+};
 
 export const Body = styled<React.FunctionComponent<Props>>((
   props,

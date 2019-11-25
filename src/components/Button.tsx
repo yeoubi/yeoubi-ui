@@ -18,14 +18,13 @@ import {
   BODY_STYLE,
 } from '../internal';
 
-export type Props = CommonProps
-  & BorderProps
-  & BackgroundProps
-  & PositionProps
-  & TypographyProps
-  & HTMLButtonProps
-  & HTMLAnchorProps
-  & {
+export type Props = CommonProps &
+  BorderProps &
+  BackgroundProps &
+  PositionProps &
+  TypographyProps &
+  HTMLButtonProps &
+  HTMLAnchorProps & {
     level: number;
     full?: boolean;
     to?: string;

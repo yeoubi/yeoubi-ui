@@ -36,7 +36,7 @@ const HEADING_STYLE: {
 
 type Props = TypographyProps & {
   level: number;
-}
+};
 
 export const Heading = styled<React.FunctionComponent<Props>>((
   props,

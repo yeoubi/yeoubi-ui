@@ -16,13 +16,12 @@ import {
   BODY_STYLE,
 } from '../internal';
 
-type ElementProps = CommonProps
-  & BorderProps
-  & BackgroundProps
-  & PositionProps
-  & TypographyProps
-  & HTMLInputProps
-  & {
+type ElementProps = CommonProps &
+  BorderProps &
+  BackgroundProps &
+  PositionProps &
+  TypographyProps &
+  HTMLInputProps & {
     level: number;
     ref?: any;
     full?: boolean;

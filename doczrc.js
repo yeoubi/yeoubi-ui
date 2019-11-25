@@ -5,7 +5,20 @@ export default {
   typescript: true,
   menu: [
     'Yeoubi UI',
-    'Components',
+    {
+      name: 'Components',
+      menu: [
+        'Size',
+        'Space',
+        'Heading',
+        'Body',
+        'Box',
+        'Flex',
+        'Image',
+        'Button',
+        'Input',
+      ],
+    },
   ],
   themeConfig: {
     showPlaygroundEditor: true,
