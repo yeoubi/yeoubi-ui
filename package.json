@@ -1,12 +1,15 @@
 {
   "name": "@yeoubi/ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Highly Customizable React UI Kit for Yeoubi",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
   "repository": "https://github.com/yeoubi/yeoubi-ui",
   "author": "Injung Chung <mu29@yeoubi.net>",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
+    "prepublish": "rm -rf dist || true && yarn build",
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },
