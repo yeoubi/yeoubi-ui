@@ -1,7 +1,7 @@
 {
-  "name": "yeoubi-ui",
+  "name": "@yeoubi/ui",
   "version": "1.0.0",
-  "description": "React UI Library for Yeoubi",
+  "description": "Highly Customizable React UI Kit for Yeoubi",
   "main": "index.js",
   "repository": "https://github.com/yeoubi/yeoubi-ui",
   "author": "Injung Chung <mu29@yeoubi.net>",
