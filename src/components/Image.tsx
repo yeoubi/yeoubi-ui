@@ -11,7 +11,7 @@ import {
   removeNonHTMLProps,
 } from '../internal';
 
-type Props = CommonProps &
+export type ImageProps = CommonProps &
   BorderProps &
   PositionProps &
   HTMLImageProps & {
@@ -19,7 +19,7 @@ type Props = CommonProps &
     fit?: 'cover' | 'contain' | 'fill';
   };
 
-export const Image = styled<React.FunctionComponent<Props>>((
+export const Image = styled<React.FunctionComponent<ImageProps>>((
   props,
 ) => React.createElement('img', removeNonHTMLProps(props)))`
   object-fit: ${props => props.fit || 'none'};

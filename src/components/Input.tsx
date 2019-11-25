@@ -28,7 +28,7 @@ type ElementProps = CommonProps &
     password?: boolean;
   };
 
-type Props = ElementProps & {
+export type InputProps = ElementProps & {
   forwardedRef?: any;
   type?: string;
   name?: string;
@@ -69,7 +69,7 @@ const InputElement = styled<React.FunctionComponent<ElementProps>>(React.forward
   ${Position}
 `;
 
-class InputComponent extends React.PureComponent<Props> {
+class InputComponent extends React.PureComponent<InputProps> {
   static defaultProps = {
     type: 'text',
   };
@@ -132,6 +132,6 @@ class InputComponent extends React.PureComponent<Props> {
   }
 }
 
-export const Input = React.forwardRef<any, Props>((props, ref) => (
+export const Input = React.forwardRef<any, InputProps>((props, ref) => (
   <InputComponent {...props} forwardedRef={ref} />
 ));

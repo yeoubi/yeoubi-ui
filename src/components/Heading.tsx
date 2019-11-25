@@ -34,11 +34,11 @@ const HEADING_STYLE: {
   `,
 };
 
-type Props = TypographyProps & {
+export type HeadingProps = TypographyProps & {
   level: number;
 };
 
-export const Heading = styled<React.FunctionComponent<Props>>((
+export const Heading = styled<React.FunctionComponent<HeadingProps>>((
   props,
 ) => React.createElement(`h${props.level}`, removeNonHTMLProps(props)))`
   margin: 0;

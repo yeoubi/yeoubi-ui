@@ -12,7 +12,7 @@ import {
   removeNonHTMLProps,
 } from '../internal';
 
-type Props = CommonProps &
+export type FlexProps = CommonProps &
   BorderProps &
   BackgroundProps &
   PositionProps & {
@@ -29,7 +29,7 @@ type Props = CommonProps &
     around?: boolean;
   };
 
-export const Flex = styled<React.FunctionComponent<Props>>((
+export const Flex = styled<React.FunctionComponent<FlexProps>>((
   props,
 ) => React.createElement('div', removeNonHTMLProps(props)))`
   display: ${props => props.inline ? 'inline-' : ''}flex;

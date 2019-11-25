@@ -18,7 +18,7 @@ import {
   BODY_STYLE,
 } from '../internal';
 
-export type Props = CommonProps &
+export type ButtonProps = CommonProps &
   BorderProps &
   BackgroundProps &
   PositionProps &
@@ -30,7 +30,7 @@ export type Props = CommonProps &
     to?: string;
   };
 
-export const Button = styled<React.FunctionComponent<Props>>((
+export const Button = styled<React.FunctionComponent<ButtonProps>>((
   props,
 ) => props.to ? (
   <Link to={props.to} {...removeNonHTMLProps(props)} />

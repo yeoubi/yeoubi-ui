@@ -12,14 +12,14 @@ import {
   removeNonHTMLProps,
 } from '../internal';
 
-type Props = CommonProps &
+export type BoxProps = CommonProps &
   BorderProps &
   BackgroundProps &
   PositionProps & {
     inline?: boolean;
   };
 
-export const Box = styled<React.FunctionComponent<Props>>((
+export const Box = styled<React.FunctionComponent<BoxProps>>((
   props
 ) => React.createElement('div', removeNonHTMLProps(props)))`
   display: ${props => props.inline ? 'inline-' : ''}block;

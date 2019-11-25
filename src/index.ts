@@ -9,4 +9,13 @@ export {
   Image,
   Button,
   Input,
+  SizeProps,
+  SpaceProps,
+  HeadingProps,
+  BodyProps,
+  BoxProps,
+  FlexProps,
+  ImageProps,
+  ButtonProps,
+  InputProps,
 } from './internal';
