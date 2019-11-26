@@ -32,6 +32,10 @@ const HEADING_STYLE: {
     font-size: 1.125rem;
     line-height: 1.5rem;
   `,
+  6: css`
+    font-size: 1rem;
+    line-height: 1.5rem;
+  `,
 };
 
 export type HeadingProps = TypographyProps & {
