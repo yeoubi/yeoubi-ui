@@ -36,7 +36,8 @@ const getSpaceValue = (
     toRem(all, vertical, top, 0),
     toRem(all, horizontal, right, 0),
     toRem(all, vertical, bottom, 0),
-    toRem(all, horizontal, left, 0)
+    toRem(all, horizontal, left, 0),
+    '!important',
   ].join(' ');
 
 export const Space = styled<React.FunctionComponent<SpaceProps>>(({
