@@ -1,5 +1,8 @@
 import { css } from 'styled-components';
-import { toRem } from '../internal';
+import {
+  toRem,
+  StyleValue,
+} from '../internal';
 
 export interface TypographyProps {
   bold?: boolean;
@@ -7,7 +10,9 @@ export interface TypographyProps {
   color?: string;
   textAlign?: 'justify' | 'center';
   textDecoration?: 'line-through';
+  lineHeight?: StyleValue;
   letterSpacing?: number;
+  keepWord?: boolean;
 }
 
 export const Typography = css<TypographyProps>`
@@ -15,5 +20,10 @@ export const Typography = css<TypographyProps>`
   text-align: ${props => props.textAlign};
   text-decoration: ${props => props.textDecoration};
   color: ${props => props.color};
+  line-height: ${props => toRem(props.lineHeight)};
   letter-spacing: ${props => toRem(props.letterSpacing)};
+  ${props => props.keepWord && css`
+    word-break: keep-all;
+    word-wrap: break-word;
+  `}
 `;
