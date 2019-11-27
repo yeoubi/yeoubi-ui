@@ -17,7 +17,7 @@ export const BODY_STYLE: {
     font-size: 1.125rem;
     line-height: 1.5rem;
 
-    ${media.mobile`
+    ${media.sm`
         font-size: 1rem;
         line-height: 1.5rem;
     `}
@@ -26,7 +26,7 @@ export const BODY_STYLE: {
     font-size: 1rem;
     line-height: 1.5rem;
 
-    ${media.mobile`
+    ${media.sm`
       font-size: 0.875rem;
       line-height: 1.25rem;
     `}
@@ -35,7 +35,7 @@ export const BODY_STYLE: {
     font-size: 0.875rem;
     line-height: 1.25rem;
 
-    ${media.mobile`
+    ${media.sm`
       font-size: 0.75rem;
       line-height: 1rem;
     `}
@@ -44,7 +44,7 @@ export const BODY_STYLE: {
     font-size: 0.75rem;
     line-height: 1rem;
 
-    ${media.mobile`
+    ${media.sm`
       font-size: 0.625rem;
       line-height: 0.1rem;
     `}

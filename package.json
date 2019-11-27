@@ -1,6 +1,6 @@
 {
   "name": "@yeoubi/ui",
-  "version": "1.0.10",
+  "version": "1.0.14",
   "description": "Highly Customizable React UI Kit for Yeoubi",
   "main": "dist/index.js",
   "types" : "dist/index.d.ts",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "prepublish": "yarn build && rm -rf dist",
+    "prepublish": "rm -rf dist || true && yarn build",
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },

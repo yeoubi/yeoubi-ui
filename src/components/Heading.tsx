@@ -17,7 +17,7 @@ const HEADING_STYLE: {
     font-size: 3rem;
     line-height: 3.5rem;
 
-    ${media.mobile`
+    ${media.sm`
       font-size: 2rem;
       line-height: 2.5rem;
     `}
@@ -26,7 +26,7 @@ const HEADING_STYLE: {
     font-size: 2rem;
     line-height: 2.5rem;
 
-    ${media.mobile`
+    ${media.sm`
       font-size: 1.5rem;
       line-height: 2rem;
     `}
@@ -35,7 +35,7 @@ const HEADING_STYLE: {
     font-size: 1.5rem;
     line-height: 2rem;
 
-    ${media.mobile`
+    ${media.sm`
       font-size: 1.25rem;
       line-height: 1.75rem;
     `}
@@ -44,7 +44,7 @@ const HEADING_STYLE: {
     font-size: 1.25rem;
     line-height: 1.75rem;
 
-    ${media.mobile`
+    ${media.sm`
       font-size: 1.125rem;
       line-height: 1.5rem;
     `}
@@ -53,7 +53,7 @@ const HEADING_STYLE: {
     font-size: 1.125rem;
     line-height: 1.5rem;
 
-    ${media.mobile`
+    ${media.sm`
         font-size: 1rem;
         line-height: 1.5rem;
     `}
@@ -62,7 +62,7 @@ const HEADING_STYLE: {
     font-size: 1rem;
     line-height: 1.5rem;
 
-    ${media.mobile`
+    ${media.sm`
       font-size: 0.875rem;
       line-height: 1.25rem;
     `}

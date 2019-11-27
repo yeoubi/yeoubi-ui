@@ -5,9 +5,10 @@ export * from './common/Responsive';
 export * from './utils/removeNonHtmlProps';
 export * from './utils/toRem';
 
-export * from './composer/Common';
-export * from './composer/Border';
 export * from './composer/Background';
+export * from './composer/Border';
+export * from './composer/Common';
+export * from './composer/Grid';
 export * from './composer/Position';
 export * from './composer/Typography';
 

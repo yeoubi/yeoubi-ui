@@ -7,15 +7,23 @@ import {
 } from 'styled-components';
 
 export const media = {
-  mobile: <T extends object> (
+  sm: <T extends object> (
     args: TemplateStringsArray | CSSObject | InterpolationFunction<ThemedStyledProps<T, {}>>,
     ...interpolations: Array<Interpolation<ThemedStyledProps<T, {}>>>
   ) => css<T>`
-    @media (max-width: 1023px) {
+    @media (max-width: 425px) {
       ${css<T>(args, ...interpolations)}
     }
   `,
-  desktop: <T extends object> (
+  md: <T extends object> (
+    args: TemplateStringsArray | CSSObject | InterpolationFunction<ThemedStyledProps<T, {}>>,
+    ...interpolations: Array<Interpolation<ThemedStyledProps<T, {}>>>
+  ) => css<T>`
+    @media (min-width: 426px) and (max-width: 1023px) {
+      ${css<T>(args, ...interpolations)}
+    }
+  `,
+  lg: <T extends object> (
     args: TemplateStringsArray | CSSObject | InterpolationFunction<ThemedStyledProps<T, {}>>,
     ...interpolations: Array<Interpolation<ThemedStyledProps<T, {}>>>
   ) => css<T>`

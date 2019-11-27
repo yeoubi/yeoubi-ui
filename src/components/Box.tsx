@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {
   Common,
   CommonProps,
+  Grid,
+  GridProps,
   Border,
   BorderProps,
   Background,
@@ -13,6 +15,7 @@ import {
 } from '../internal';
 
 export type BoxProps = CommonProps &
+  GridProps &
   BorderProps &
   BackgroundProps &
   PositionProps & {
@@ -24,6 +27,7 @@ export const Box = styled<React.FunctionComponent<BoxProps>>((
 ) => React.createElement('div', removeNonHTMLProps(props)))`
   display: ${props => props.inline ? 'inline-' : ''}block;
   ${Common}
+  ${Grid}
   ${Border}
   ${Background}
   ${Position}

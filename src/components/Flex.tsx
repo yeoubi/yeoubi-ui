@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {
   Common,
   CommonProps,
+  Grid,
+  GridProps,
   Border,
   BorderProps,
   Background,
@@ -13,6 +15,7 @@ import {
 } from '../internal';
 
 export type FlexProps = CommonProps &
+  GridProps &
   BorderProps &
   BackgroundProps &
   PositionProps & {
@@ -85,6 +88,7 @@ export const Flex = styled<React.FunctionComponent<FlexProps>>((
     return undefined;
   }};
   ${Common}
+  ${Grid}
   ${Border}
   ${Background}
   ${Position}
