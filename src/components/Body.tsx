@@ -24,6 +24,10 @@ export const BODY_STYLE: {
     font-size: 0.875rem;
     line-height: 1.25rem;
   `,
+  4: css`
+    font-size: 0.625rem;
+    line-height: 1rem;
+  `,
 };
 
 export type BodyProps = TypographyProps & {

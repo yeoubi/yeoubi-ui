@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
   input {
+    outline: none;
+
     &:active,
     &:focus {
       outline: none;
