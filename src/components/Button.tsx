@@ -25,7 +25,7 @@ export type ButtonProps = CommonProps &
   TypographyProps &
   HTMLButtonProps &
   HTMLAnchorProps & {
-    level: number;
+    level?: number;
     full?: boolean;
     to?: string;
   };
@@ -36,6 +36,8 @@ export const Button = styled<React.FunctionComponent<ButtonProps>>((
   <Link to={props.to} {...removeNonHTMLProps(props)} />
 ) : React.createElement(props.href ? 'a' : 'button', removeNonHTMLProps(props)))`
   outline: none;
+  cursor: pointer;
+
   ${props => props.full && css`
     display: block;
     width: 100%;
@@ -50,7 +52,7 @@ export const Button = styled<React.FunctionComponent<ButtonProps>>((
     justify-content: center;
     text-decoration: none;
   `}
-  ${props => BODY_STYLE[props.level]}
+  ${props => props.level && BODY_STYLE[props.level]}
   ${Typography};
   ${Common}
   ${Border}
