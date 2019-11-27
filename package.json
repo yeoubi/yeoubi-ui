@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "prepublish": "rm -rf dist || true && yarn build",
+    "prepublish": "yarn build && rm -rf dist",
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },
