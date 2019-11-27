@@ -1,5 +1,6 @@
 export {
   GlobalStyle,
+  media,
   Size,
   Space,
   Heading,
