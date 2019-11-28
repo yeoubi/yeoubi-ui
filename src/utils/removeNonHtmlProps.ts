@@ -48,6 +48,9 @@ const INVALID_PROPS = [
   'between',
   'around',
   'full',
+  'overflow',
+  'color',
+  'keepWord',
 ];
 
 export const removeNonHTMLProps = (
