@@ -18,6 +18,7 @@ export * from './components/Heading';
 export * from './components/Body';
 export * from './components/Box';
 export * from './components/Flex';
+export * from './components/ResponsiveFlex';
 export * from './components/Image';
 export * from './components/Button';
 export * from './components/Input';

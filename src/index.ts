@@ -7,6 +7,7 @@ export {
   Body,
   Box,
   Flex,
+  ResponsiveFlex,
   Image,
   Button,
   Input,
