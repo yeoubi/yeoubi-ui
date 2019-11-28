@@ -6,7 +6,6 @@ import {
 
 export const ResponsiveFlex = styled(Flex)`
   flex-direction: row;
-  max-width: 32rem;
 
   ${media.sm`
     flex-direction: column;
