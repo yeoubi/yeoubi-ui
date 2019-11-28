@@ -14,5 +14,5 @@
     "baseUrl": "src",
     "outDir": "dist"
   },
-  "exclude": ["docs", "docz"]
+  "exclude": ["docs", "docz", "dist"]
 }
