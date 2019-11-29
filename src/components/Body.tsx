@@ -27,8 +27,8 @@ export const BODY_STYLE: {
     line-height: 1.5rem;
 
     ${media.sm`
-      font-size: 0.875rem;
-      line-height: 1.25rem;
+      font-size: 0.9375rem;
+      line-height: 1.4rem;
     `}
   `,
   3: css`
@@ -36,8 +36,8 @@ export const BODY_STYLE: {
     line-height: 1.25rem;
 
     ${media.sm`
-      font-size: 0.75rem;
-      line-height: 1rem;
+      font-size: 0.8125rem;
+      line-height: 1.2rem;
     `}
   `,
   4: css`
@@ -45,8 +45,8 @@ export const BODY_STYLE: {
     line-height: 1rem;
 
     ${media.sm`
-      font-size: 0.625rem;
-      line-height: 0.1rem;
+      font-size: 0.6875rem;
+      line-height: 0.9rem;
     `}
   `,
 };
