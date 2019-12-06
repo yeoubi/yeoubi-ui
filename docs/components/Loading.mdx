@@ -1,0 +1,32 @@
+---
+menu: Components
+name: Loading
+route: /components/loading
+---
+
+import {
+  Playground,
+  Props,
+} from 'docz';
+import {
+  Space,
+  Loading,
+} from '@yeoubi/ui';
+
+# Loading
+
+다양한 크기로 로딩 여부를 보여주는 컴포넌트입니다.
+
+<Props of={Loading} />
+
+## Usage
+
+<Playground>
+  <Space mb={32} mh="auto">
+    <Loading width={4} size="large" color="#E63323" isLoading />
+  </Space>
+  <Space mb={32} mh="auto">
+    <Loading size="normal" color="#E63323" isLoading />
+  </Space>
+  <Loading size="small" color="#E63323" isLoading />
+</Playground>

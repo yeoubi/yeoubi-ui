@@ -22,3 +22,4 @@ export * from './components/ResponsiveFlex';
 export * from './components/Image';
 export * from './components/Button';
 export * from './components/Input';
+export * from './components/Loading';

@@ -11,6 +11,7 @@ export {
   Image,
   Button,
   Input,
+  Loading,
   SizeProps,
   SpaceProps,
   HeadingProps,
