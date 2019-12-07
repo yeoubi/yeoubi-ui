@@ -23,3 +23,4 @@ export * from './components/Image';
 export * from './components/Button';
 export * from './components/Input';
 export * from './components/Loading';
+export * from './components/LoadingButton';
