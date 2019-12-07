@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { toRem } from '../internal';
+import {
+  toRem,
+  removeNonHTMLProps,
+} from '../internal';
 
-export interface Props {
-  isLoading?: boolean;
-  color?: string;
-  width?: number;
-  size?: 'large' | 'normal' | 'small';
-}
-
-const size = (props: Props) => {
+const size = (props: LoadingProps) => {
   switch (props.size) {
     case 'large':
       return '2rem'
@@ -20,11 +16,15 @@ const size = (props: Props) => {
   }
 };
 
-const Wrapper = styled.div`
-  margin: auto;
-`;
+export interface LoadingProps {
+  color?: string;
+  width?: number;
+  size?: 'large' | 'normal' | 'small';
+}
 
-const Progress = styled.div<Props>`
+export const Loading = styled<React.FunctionComponent<LoadingProps>>((
+  props,
+) => React.createElement('div', removeNonHTMLProps(props)))`
   width: ${size};
   height: ${size};
   margin: auto;
@@ -42,19 +42,3 @@ const Progress = styled.div<Props>`
     }
   }
 `;
-
-export const Loading: React.FunctionComponent<Props> = ({
-  isLoading,
-  children,
-  ...props
-}) => (
-  isLoading ? (
-    <Wrapper>
-      <Progress {...props} />
-    </Wrapper>
-  ) : (
-    <React.Fragment>
-      {children}
-    </React.Fragment>
-  )
-);
