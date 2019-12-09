@@ -33,7 +33,7 @@ export const LoadingButton: React.FunctionComponent<LoadingButtonProps> = ({
   children,
   ...props
 }) => (
-  <Button {...props}>
+  <Button disabled={isLoading} {...props}>
     {children}
     {isLoading && (
       <Wrapper bgColor={props.bgColor}>
