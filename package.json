@@ -1,19 +1,25 @@
 {
   "name": "@yeoubi/ui",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Highly Customizable React UI Kit for Yeoubi",
   "main": "dist/index.js",
-  "types" : "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/yeoubi/yeoubi-ui",
   "author": "Injung Chung <mu29@yeoubi.net>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && babel src --out-dir dist --extensions \".ts,.tsx\" --copy-files",
     "prepublish": "rm -rf dist || true && yarn build",
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
     "@types/react-router-dom": "^5.1.2",
