@@ -53,6 +53,7 @@ const INVALID_PROPS = [
   'keepWord',
   'flex',
   'label',
+  'textarea',
 ];
 
 export const removeNonHTMLProps = (
