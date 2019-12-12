@@ -13,6 +13,7 @@ import {
   TypographyProps,
   removeNonHTMLProps,
   HTMLInputProps,
+  HTMLTextAreaProps,
   BODY_STYLE,
 } from '../internal';
 
@@ -21,7 +22,8 @@ type ElementProps = CommonProps &
   BackgroundProps &
   PositionProps &
   TypographyProps &
-  HTMLInputProps & {
+  HTMLInputProps &
+  HTMLTextAreaProps & {
     level: number;
     ref?: any;
     full?: boolean;
@@ -90,7 +92,7 @@ class InputComponent extends React.PureComponent<InputProps> {
     );
   }
 
-  private onChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+  private onChange = ({ target }: React.ChangeEvent<any>) => {
     const { onChangeText } = this.props;
 
     if (onChangeText) {
@@ -99,7 +101,7 @@ class InputComponent extends React.PureComponent<InputProps> {
     this.setState({ value: target.value });
   }
 
-  private onKeyPress = ({ key }: React.KeyboardEvent<HTMLInputElement>) => {
+  private onKeyPress = ({ key }: React.KeyboardEvent<any>) => {
     if (key === 'Enter') {
       const { onPressEnter } = this.props;
       if (onPressEnter) {
