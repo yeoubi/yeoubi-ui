@@ -28,6 +28,7 @@ type ElementProps = CommonProps &
     ref?: any;
     full?: boolean;
     password?: boolean;
+    textarea?: boolean;
   };
 
 export type InputProps = ElementProps & {
@@ -42,7 +43,7 @@ export type InputProps = ElementProps & {
 const InputElement = styled<React.FunctionComponent<ElementProps>>(React.forwardRef((
   props,
   ref,
-) => React.createElement('input', { ref, ...removeNonHTMLProps(props) })))`
+) => React.createElement(props.textarea ? 'textarea' : 'input', { ref, ...removeNonHTMLProps(props) })))`
   ::placeholder,
   ::-webkit-input-placeholder {
     color: #d2d2d2;
