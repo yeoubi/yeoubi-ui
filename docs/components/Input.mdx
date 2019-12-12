@@ -1,7 +1,7 @@
 ---
 menu: Components
 name: Input
-route: /components/Input
+route: /components/input
 ---
 
 import {
@@ -20,11 +20,16 @@ import {
 ## Usage
 
 <Playground>
-  <Space mr={8}>
-    <Input level={1} placeholder="lorem ipsum" bgColor="#F7F7F7" />
+  <Space mr={8} pv={8} ph={12}>
+    <Input level={1} placeholder="lorem ipsum" border="#EEEEEE" inline />
   </Space>
-  <Input level={1} placeholder="lorem ipsum" bgColor="#F7F7F7" password />
-  <Space mt={8}>
-    <Input level={1} placeholder="lorem ipsum" bgColor="#F7F7F7" full />
+  <Space pv={8} ph={12}>
+    <Input level={1} type="password" placeholder="lorem ipsum" border="#EEEEEE" inline />
+  </Space>
+  <Space mt={8} pv={8} ph={12}>
+    <Input level={1} placeholder="lorem ipsum" border="#EEEEEE" full />
+  </Space>
+  <Space mt={8} pv={8} ph={12}>
+    <Input as="textarea" level={1} placeholder="lorem ipsum" border="#EEEEEE" />
   </Space>
 </Playground>

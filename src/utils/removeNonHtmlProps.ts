@@ -51,6 +51,8 @@ const INVALID_PROPS = [
   'overflow',
   'color',
   'keepWord',
+  'flex',
+  'label',
 ];
 
 export const removeNonHTMLProps = (

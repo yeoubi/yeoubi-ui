@@ -11,6 +11,7 @@ export {
   Image,
   Button,
   Input,
+  Field,
   Loading,
   LoadingButton,
   SizeProps,
@@ -22,5 +23,6 @@ export {
   ImageProps,
   ButtonProps,
   InputProps,
+  FieldProps,
   LoadingButtonProps,
 } from './internal';

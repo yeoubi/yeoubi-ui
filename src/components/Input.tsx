@@ -54,15 +54,12 @@ const InputElement = styled<React.FunctionComponent<ElementProps>>(React.forward
     -webkit-appearance: none;
     margin: 0;
   }
+  outline: none;
   ${props => props.full && css`
     width: 100%
   `};
-  ${props => props.password && css`
-    -webkit-text-security: disc;
-    text-security: disc;
-  `}
   ${props => BODY_STYLE[props.level]}
-  ${Typography};
+  ${Typography}
   ${Common}
   ${Border}
   ${Background}
@@ -77,40 +74,20 @@ class InputComponent extends React.PureComponent<InputProps> {
   public render() {
     const {
       forwardedRef,
-      type,
       ...props
     } = this.props;
 
     return (
       <InputElement
         ref={forwardedRef}
-        type={this.elementType}
         onChange={this.onChange}
         onKeyPress={this.onKeyPress}
-        pattern={type === 'number' ? '[0-9]*' : undefined}
         autoCorrect="off"
         autoComplete="off"
         autoCapitalize="none"
         {...props}
       />
     );
-  }
-
-  private get elementType() {
-    const {
-      type,
-      password,
-    } = this.props;
-
-    if (password) {
-      return 'password';
-    }
-
-    if (type === 'number') {
-      return 'text';
-    }
-
-    return type;
   }
 
   private onChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {

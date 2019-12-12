@@ -53,7 +53,7 @@ export const Button = styled<React.FunctionComponent<ButtonProps>>((
     text-decoration: none;
   `}
   ${props => props.level && BODY_STYLE[props.level]}
-  ${Typography};
+  ${Typography}
   ${Common}
   ${Border}
   ${Background}
