@@ -37,6 +37,7 @@ export const Button = styled<React.FunctionComponent<ButtonProps>>((
 ) : React.createElement(props.href ? 'a' : 'button', removeNonHTMLProps(props)))`
   outline: none;
   cursor: pointer;
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   ${props => props.full && css`
     display: block;

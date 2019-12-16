@@ -18,8 +18,8 @@ export const BODY_STYLE: {
     line-height: 1.5rem;
 
     ${media.sm`
-        font-size: 1rem;
-        line-height: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
     `}
   `,
   2: css`
@@ -59,6 +59,7 @@ export const Body = styled<React.FunctionComponent<BodyProps>>((
   props,
 ) => React.createElement('div', removeNonHTMLProps(props)))`
   margin: 0;
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   ${props => BODY_STYLE[props.level]};
   ${Typography}
 `;
