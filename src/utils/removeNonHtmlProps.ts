@@ -54,6 +54,7 @@ const INVALID_PROPS = [
   'flex',
   'label',
   'textarea',
+  'zIndex',
 ];
 
 export const removeNonHTMLProps = (

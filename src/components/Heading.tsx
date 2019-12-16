@@ -77,8 +77,6 @@ export const Heading = styled<React.FunctionComponent<HeadingProps>>((
   props,
 ) => React.createElement(`h${props.level}`, removeNonHTMLProps(props)))`
   margin: 0;
-  font-weight: bold;
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   ${props => HEADING_STYLE[props.level]};
   ${Typography}
 `;

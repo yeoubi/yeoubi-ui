@@ -59,7 +59,6 @@ export const Body = styled<React.FunctionComponent<BodyProps>>((
   props,
 ) => React.createElement('div', removeNonHTMLProps(props)))`
   margin: 0;
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   ${props => BODY_STYLE[props.level]};
   ${Typography}
 `;
