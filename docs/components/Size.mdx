@@ -8,7 +8,10 @@ import {
   Playground,
   Props,
 } from 'docz';
-import { Size } from '@yeoubi/ui';
+import {
+  Size,
+  Space,
+} from '@yeoubi/ui';
 
 # Size
 
@@ -19,7 +22,12 @@ import { Size } from '@yeoubi/ui';
 ## Usage
 
 <Playground>
-  <Size width={100} height={50}>
+  <Space mb={16}>
+    <Size width={100} height={50}>
+      <div style={{ backgroundColor: '#000' }} />
+    </Size>
+  </Space>
+  <Size width={[100, 200, 300]} height={50}>
     <div style={{ backgroundColor: '#000' }} />
   </Size>
 </Playground>

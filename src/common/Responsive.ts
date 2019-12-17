@@ -6,6 +6,18 @@ import {
   Interpolation,
 } from 'styled-components';
 
+export type ResponsiveValue<T> = T | T[];
+
+export function unwrap<T>(value: ResponsiveValue<T>, index: number) {
+  if (!Array.isArray(value)) {
+    return value;
+  }
+
+  const safeIndex = Math.min(value.length - 1, index);
+
+  return value[safeIndex];
+}
+
 export const media = {
   sm: <T extends object> (
     args: TemplateStringsArray | CSSObject | InterpolationFunction<ThemedStyledProps<T, {}>>,
