@@ -14,7 +14,7 @@ import {
   BODY_STYLE,
 } from '../internal';
 
-export type OptionProps = string | { label: string; value: string };
+export type OptionProps = string | { label: string; value: any };
 
 type ElementProps = CommonProps &
   BorderProps &
