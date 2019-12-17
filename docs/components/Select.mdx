@@ -1,0 +1,35 @@
+---
+menu: Components
+name: Select
+route: /components/select
+---
+
+import {
+  Playground,
+  Props,
+} from 'docz';
+import {
+  Space,
+  Select,
+} from '@yeoubi/ui';
+
+# Select
+
+<Props of={Select} />
+
+## Usage
+
+<Playground>
+  <Space mb={16} pv={12} pl={16} pr={32}>
+    <Select level={2} border="#E0E0E0" options={['Lorem Ipsum', 'dolor sit amet', 'consectetur adipiscing']} />
+  </Space>
+  <Space pv={12} ph={16}>
+    <Select
+      level={2}
+      border="#E0E0E0"
+      options={['Lorem Ipsum', 'dolor sit amet', 'consectetur adipiscing']}
+      value="dolor sit amet"
+      full
+    />
+  </Space>
+</Playground>

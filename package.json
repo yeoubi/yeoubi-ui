@@ -1,6 +1,6 @@
 {
   "name": "@yeoubi/ui",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "description": "Highly Customizable React UI Kit for Yeoubi",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc && babel src --out-dir dist --extensions \".ts,.tsx\" --copy-files",
     "prepublish": "rm -rf dist || true && yarn build",
-    "docz:dev": "docz dev",
+    "dev": "docz dev",
     "docz:build": "docz build"
   },
   "devDependencies": {

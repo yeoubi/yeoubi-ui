@@ -59,8 +59,8 @@ const InputElement = styled<React.FunctionComponent<ElementProps>>(React.forward
   }
   outline: none;
   ${props => props.full && css`
-    width: 100%
-  `};
+    width: 100%;
+  `}
   ${props => BODY_STYLE[props.level]}
   ${Typography}
   ${Common}

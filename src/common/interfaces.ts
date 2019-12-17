@@ -15,3 +15,5 @@ export type HTMLButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 export type HTMLAnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export type HTMLImageProps = React.InputHTMLAttributes<HTMLImageElement>;
+
+export type HTMLSelectProps = React.SelectHTMLAttributes<HTMLSelectElement>;
