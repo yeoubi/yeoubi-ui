@@ -28,7 +28,7 @@ type ElementProps = CommonProps &
 
 export type SelectProps = ElementProps & {
   options: OptionProps[];
-  onSelect: (value: any) => void;
+  onSelect?: (value: any) => void;
 };
 
 const SelectElement = styled<React.FunctionComponent<ElementProps>>((
