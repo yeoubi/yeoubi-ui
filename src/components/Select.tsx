@@ -28,7 +28,7 @@ type ElementProps = CommonProps &
 
 export type SelectProps = ElementProps & {
   options: OptionProps[];
-  onSelect?: (value: any) => void;
+  onChangeValue?: (value: any) => void;
 };
 
 const SelectElement = styled<React.FunctionComponent<ElementProps>>((
@@ -60,12 +60,12 @@ const SelectElement = styled<React.FunctionComponent<ElementProps>>((
 
 export const Select: React.FunctionComponent<SelectProps> = ({
   options,
-  onSelect,
+  onChangeValue,
   ...props
 }) => {
   const onChange = useCallback(({ target }: React.ChangeEvent<HTMLSelectElement>) => {
-    onSelect && onSelect(target.value);
-  }, [onSelect]);
+    onChangeValue && onChangeValue(target.value);
+  }, [onChangeValue]);
 
   const renderOptions = useCallback((option: OptionProps) => {
     if (typeof option === 'object') {
