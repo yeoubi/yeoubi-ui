@@ -99,7 +99,6 @@ class InputComponent extends React.PureComponent<InputProps> {
     if (onChangeText) {
       onChangeText(target.value);
     }
-    this.setState({ value: target.value });
   }
 
   private onKeyPress = ({ key }: React.KeyboardEvent<any>) => {
