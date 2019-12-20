@@ -1,6 +1,6 @@
 {
   "name": "@yeoubi/ui",
-  "version": "2.0.4",
+  "version": "2.0.8",
   "description": "Highly Customizable React UI Kit for Yeoubi",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

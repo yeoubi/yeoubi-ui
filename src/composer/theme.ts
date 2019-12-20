@@ -7,6 +7,10 @@ export interface Theme {
   fontSizes: number[];
   lineHeights: number[];
   breakpoints: string[];
+  palette: {
+    [key: string]: any;
+  };
+  [key: string]: any;
 }
 
 export interface ThemeProps {
