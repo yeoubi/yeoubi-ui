@@ -27,6 +27,9 @@ const config = {
   textDecoration: {
     property: 'textDecoration',
   },
+  wordBreak: {
+    property: 'word-break',
+  },
 };
 
 export type TypographyProps = {
@@ -37,6 +40,7 @@ export type TypographyProps = {
   letterSpacing?: ResponsiveValue<number>;
   textAlign?: ResponsiveValue<string>;
   textDecoration?: ResponsiveValue<string>;
+  wordBreak?: ResponsiveValue<string>;
 };
 
 export const typography = parse(config);

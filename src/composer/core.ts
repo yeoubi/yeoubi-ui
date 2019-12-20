@@ -59,19 +59,19 @@ export function parse(styleConfig: StyleConfig) {
     return Object
       .entries(styleConfig)
       .reduce((style, [key, config]) => {
-        if (props[key] === undefined) {
+        const value = props[key];
+        const transform = config.transform || (v => v);
+
+        if (value === undefined) {
           return style;
         }
 
-        const transform = config.transform || (v => v);
-        const value = transform(props[key]);
-
         if (Array.isArray(value)) {
           const breakpoints = (props.theme && props.theme.breakpoints) || defaultBreakpoints;
-          return mergeResponsiveStyle(breakpoints, style, value, config);
+          return mergeResponsiveStyle(breakpoints, style, value.map(v => transform(v)), config);
         }
 
-        return mergeStyle(style, value, config);
+        return mergeStyle(style, transform(value), config);
       }, {});
   };
 
