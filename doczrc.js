@@ -8,15 +8,17 @@ export default {
     {
       name: 'Components',
       menu: [
-        'Size',
-        'Space',
-        'Heading',
-        'Body',
         'Box',
         'Flex',
-        'Image',
+        'Heading',
+        'Body',
         'Button',
+        'Link',
+        'Image',
         'Input',
+        'Loading',
+        'LoadingButton',
+        'Select'
       ],
     },
   ],
