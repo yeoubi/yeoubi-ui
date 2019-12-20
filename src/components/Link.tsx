@@ -48,6 +48,11 @@ const LinkElement: React.FunctionComponent<LinkProps> = styled((props: LinkProps
   justify-content: center;
   text-decoration: none;
 
+  &:active,
+  &:foucs {
+    outline: none;
+  }
+
   ${size}
   ${space}
   ${layout}
