@@ -1,7 +1,7 @@
 ---
 menu: Components
-name: Button
-route: /components/button
+name: Link
+route: /components/link
 ---
 
 import { ThemeProvider } from 'styled-components';
@@ -10,21 +10,21 @@ import {
   Props,
 } from 'docz';
 import {
-  Button,
+  Link,
   Space,
   defaultTheme,
 } from '@yeoubi/ui';
 
-# Button
+# Link
 
-버튼으로 사용할 수 있는 컴포넌트입니다.
+클라이언트 사이드 라우팅 링크로 사용할 수 있는 컴포넌트입니다.
 
-<Props of={Button} />
+<Props of={Link} />
 
 ## Usage
 
 <Playground>
-  <Button
+  <Link
     ph={24}
     pv={16}
     mr={12}
@@ -34,8 +34,8 @@ import {
     borderRadius={4}
   >
     Lorem Ipsum
-  </Button>
-  <Button
+  </Link>
+  <Link
     ph={16}
     pv={12}
     mr={12}
@@ -45,8 +45,8 @@ import {
     disabled
   >
     Lorem Ipsum
-  </Button>
-  <Button
+  </Link>
+  <Link
     pv={16}
     mt={8}
     level={1}
@@ -55,5 +55,5 @@ import {
     full
   >
     dolor sit amet
-  </Button>
+  </Link>
 </Playground>

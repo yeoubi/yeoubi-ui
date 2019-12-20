@@ -1,6 +1,7 @@
 export * from './common/interfaces';
 export * from './common/GlobalStyle';
 export * from './common/Responsive';
+export * from './common/removeInvalidProps';
 
 export * from './composer/size';
 export * from './composer/space';

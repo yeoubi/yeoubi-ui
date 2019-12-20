@@ -22,6 +22,7 @@ import {
   PositionProps,
   TypographyProps,
   ThemeProps,
+  removeInvalidProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
 } from '../internal';
@@ -35,11 +36,18 @@ export type LinkProps = SizeProps &
   PositionProps &
   TypographyProps &
   RouterLinkProps & {
-    level: number;
+    level?: number;
     full?: boolean;
   };
 
-const LinkElement: React.FunctionComponent<LinkProps> = styled(RouterLink)<LinkProps>`
+const LinkElement: React.FunctionComponent<LinkProps> = styled((props: LinkProps) => (
+  <RouterLink {...removeInvalidProps(props)} />
+))`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
   ${size}
   ${space}
   ${layout}
@@ -52,6 +60,8 @@ const LinkElement: React.FunctionComponent<LinkProps> = styled(RouterLink)<LinkP
 
 const LinkComponent: React.FunctionComponent<LinkProps & ThemeProps> = (props) => {
   const {
+    level = 0,
+    full = false,
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
       lineHeights = DEFAULT_LINE_HEIGHTS,
@@ -64,10 +74,10 @@ const LinkComponent: React.FunctionComponent<LinkProps & ThemeProps> = (props) =
   return (
     <LinkElement
       fontFamily={body}
-      fontSize={fontSizes[props.level + 3]}
-      lineHeight={lineHeights[props.level + 3]}
-      display={props.full ? 'block' : undefined}
-      width={props.full ? '100%' : undefined}
+      fontSize={level ? fontSizes[level + 3] : undefined}
+      lineHeight={level ? lineHeights[level + 3] : undefined}
+      display={full ? 'flex' : undefined}
+      width={full ? '100%' : undefined}
       {...props}
     />
   );

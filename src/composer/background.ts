@@ -13,7 +13,7 @@ const config = {
   bgRepeat: {
     property: 'backgroundRepeat',
   },
-  brPosition: {
+  bgPosition: {
     property: 'backgroundPosition',
   },
 };
