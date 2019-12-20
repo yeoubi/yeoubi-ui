@@ -1,34 +1,43 @@
-import React from 'react';
 import styled from 'styled-components';
 import {
-  Common,
-  CommonProps,
-  Grid,
-  GridProps,
-  Border,
+  size,
+  space,
+  layout,
+  color,
+  border,
+  background,
+  position,
+  typography,
+  SizeProps,
+  SpaceProps,
+  LayoutProps,
+  ColorProps,
   BorderProps,
-  Background,
   BackgroundProps,
-  Position,
   PositionProps,
-  removeNonHTMLProps,
+  TypographyProps,
+  ThemeProps,
 } from '../internal';
 
-export type BoxProps = CommonProps &
-  GridProps &
+export type BoxProps = SizeProps &
+  SpaceProps &
+  LayoutProps &
+  ColorProps &
   BorderProps &
   BackgroundProps &
-  PositionProps & {
-    inline?: boolean;
+  PositionProps &
+  TypographyProps & 
+  ThemeProps & {
+    as?: any;
   };
 
-export const Box = styled<React.FunctionComponent<BoxProps>>((
-  props
-) => React.createElement('div', removeNonHTMLProps(props)))`
-  display: ${props => props.inline ? 'inline-' : ''}block;
-  ${Common}
-  ${Grid}
-  ${Border}
-  ${Background}
-  ${Position}
+export const Box: React.FunctionComponent<BoxProps> = styled.div<BoxProps>`
+  ${size}
+  ${space}
+  ${layout}
+  ${color}
+  ${border}
+  ${background}
+  ${position}
+  ${typography}
 `;

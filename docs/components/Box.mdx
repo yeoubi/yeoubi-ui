@@ -23,85 +23,20 @@ import {
 ## Usage
 
 <Playground>
-  <Box>
-    <Body level={2}>
-      Lorem Ipsum
-    </Body>
+  <Box
+    p={16}
+    mb={16}
+    bgColor="#F1F1F1"
+    border="#E0E0E0"
+  >
+    Lorem Ipsum
   </Box>
-</Playground>
-
-## Common
-
-`flex`, `overflow`, `inline` 속성을 설정합니다.
-
-<Playground>
-  <Space p={8} mr={8} mb={8}>
-    <Box bgColor="#000">
-      <Body color="#FFF" level={2}>
-        Lorem Ipsum
-      </Body>
-    </Box>
-  </Space>
-  <Space p={8}>
-    <Box bgColor="#000" inline>
-      <Body color="#FFF" level={2}>
-        Lorem Ipsum
-      </Body>
-    </Box>
-  </Space>
-</Playground>
-
-
-## Border
-
-테두리 색, 두께, 지름을 설정합니다.
-
-<Playground>
-  <Space p={8} mr={8}>
-    <Box border="#000" borderWidth={2} inline>
-      <Body level={2}>
-        Lorem Ipsum
-      </Body>
-    </Box>
-  </Space>
-  <Space p={8} mr={8}>
-    <Box border="#000" borderWidth={2} borderRadius={8} inline>
-      <Body level={2}>
-        Lorem Ipsum
-      </Body>
-    </Box>
-  </Space>
-  <Space p={8}>
-    <Box border="0.125rem solid #000" inline>
-      <Body level={2}>
-        Lorem Ipsum
-      </Body>
-    </Box>
-  </Space>
-</Playground>
-
-## Background
-
-배경 색, 이미지를 설정합니다.
-
-<Playground>
-  <Space p={8} mr={8}>
-    <Box bgColor="#000" inline>
-      <Body color="#FFF" level={2}>
-        Lorem Ipsum
-      </Body>
-    </Box>
-  </Space>
-</Playground>
-
-## Position
-
-<Playground>
-  <Space p={8} mr={8}>
-    <Box bgColor="#000" position="absolute" top={8} right={8}>
-      <Body color="#FFF" level={2}>
-        Lorem Ipsum
-      </Body>
-    </Box>
-  </Space>
+  <Box
+    p={16}
+    bgColor="#F1F1F1"
+    border="#E0E0E0"
+    display={['block', 'inline-block']}
+  >
+    Lorem Ipsum
+  </Box>
 </Playground>

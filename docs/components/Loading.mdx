@@ -8,10 +8,7 @@ import {
   Playground,
   Props,
 } from 'docz';
-import {
-  Space,
-  Loading,
-} from '@yeoubi/ui';
+import { Loading } from '@yeoubi/ui';
 
 # Loading
 
@@ -22,11 +19,6 @@ import {
 ## Usage
 
 <Playground>
-  <Space mb={32} mh="auto">
-    <Loading width={4} size="large" color="#E63323" />
-  </Space>
-  <Space mb={32} mh="auto">
-    <Loading size="normal" color="#E63323" />
-  </Space>
-  <Loading size="small" color="#E63323" />
+  <Loading mb={32} mh="auto" border="4px solid #E63323" size={32} />
+  <Loading mh="auto" border="4px solid #1A1A1A" size={16} />
 </Playground>

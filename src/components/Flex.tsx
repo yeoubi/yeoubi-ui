@@ -1,95 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  Common,
-  CommonProps,
-  Grid,
-  GridProps,
-  Border,
-  BorderProps,
-  Background,
-  BackgroundProps,
-  Position,
-  PositionProps,
-  removeNonHTMLProps,
+  flexbox,
+  FlexboxProps,
+  Box,
+  BoxProps,
 } from '../internal';
 
-export type FlexProps = CommonProps &
-  GridProps &
-  BorderProps &
-  BackgroundProps &
-  PositionProps & {
-    inline?: boolean;
-    vertical?: boolean;
-    center?: boolean;
-    vcenter?: boolean;
-    vstart?: boolean;
-    vend?: boolean;
-    hcenter?: boolean;
-    hstart?: boolean;
-    hend?: boolean;
-    between?: boolean;
-    around?: boolean;
-  };
+export type FlexProps = BoxProps & FlexboxProps;
 
-export const Flex = styled<React.FunctionComponent<FlexProps>>((
-  props,
-) => React.createElement('div', removeNonHTMLProps(props)))`
-  display: ${props => props.inline ? 'inline-' : ''}flex;
-  flex-direction: ${props => props.vertical ? 'column' : 'row'};
-  justify-content: ${({
-    vertical,
-    center,
-    vcenter,
-    vstart,
-    vend,
-    hcenter,
-    hstart,
-    hend,
-    between,
-    around,
-  }) => {
-    if (between) {
-      return 'space-between';
-    }
-    if (around) {
-      return 'space-around';
-    }
-    if (center || (vertical && vcenter) || (!vertical && hcenter)) {
-      return 'center';
-    }
-    if ((vertical && vstart) || (!vertical && hstart)) {
-      return 'flex-start'
-    }
-    if ((vertical && vend) || (!vertical && hend)) {
-      return 'flex-end'
-    }
-    return undefined;
-  }};
-  align-items: ${({
-    vertical,
-    center,
-    vcenter,
-    vstart,
-    vend,
-    hcenter,
-    hstart,
-    hend,
-  }) => {
-    if (center || (vertical && hcenter) || (!vertical && vcenter)) {
-      return 'center';
-    }
-    if ((vertical && hstart) || (!vertical && vstart)) {
-      return 'flex-start';
-    }
-    if ((vertical && hend) || (!vertical && vend)) {
-      return 'flex-end';
-    }
-    return undefined;
-  }};
-  ${Common}
-  ${Grid}
-  ${Border}
-  ${Background}
-  ${Position}
+const FlexElement = styled(Box)`
+  ${flexbox};
 `;
+
+export const Flex: React.FunctionComponent<FlexProps> = (props) => (
+  <FlexElement display="flex" {...props} />
+);

@@ -1,35 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  toRem,
-  removeNonHTMLProps,
+  Box,
+  BoxProps,
 } from '../internal';
 
-const size = (props: LoadingProps) => {
-  switch (props.size) {
-    case 'large':
-      return '2rem'
-    case 'small':
-      return '1rem'
-    default:
-      return '1.375rem'
-  }
-};
+export type LoadingProps = BoxProps;
 
-export interface LoadingProps {
-  color?: string;
-  width?: number;
-  size?: 'large' | 'normal' | 'small';
-}
-
-export const Loading = styled<React.FunctionComponent<LoadingProps>>((
-  props,
-) => React.createElement('div', removeNonHTMLProps(props)))`
-  width: ${size};
-  height: ${size};
-  margin: auto;
+export const Loading: React.FunctionComponent<LoadingProps> = styled(Box)`
   animation: rotate 0.8s infinite linear;
-  border: ${props => toRem(props.width || 2)} solid ${props => props.color};
   border-right-color: transparent;
   border-radius: 50%;
 

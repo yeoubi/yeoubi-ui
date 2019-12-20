@@ -1,31 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  Common,
-  CommonProps,
-  Border,
-  BorderProps,
-  Position,
-  PositionProps,
-  HTMLImageProps,
-  removeNonHTMLProps,
+  img,
+  ImgProps,
+  Box,
+  BoxProps,
 } from '../internal';
 
-export type ImageProps = CommonProps &
-  BorderProps &
-  PositionProps &
-  HTMLImageProps & {
-    src: string;
-    fit?: 'cover' | 'contain' | 'fill';
-  };
+export type ImageProps = BoxProps & ImgProps;
 
-export const Image = styled<React.FunctionComponent<ImageProps>>((
-  props,
-) => React.createElement('img', removeNonHTMLProps(props)))`
-  object-fit: ${props => props.fit || 'none'};
-  ${Common}
-  ${Border}
-  ${Position}
+const ImageElement = styled(Box)`
+  ${img}
 `;
 
-export default Image;
+export const Image: React.FunctionComponent<ImageProps> = (props) => (
+  <ImageElement as="img" {...props} />
+);

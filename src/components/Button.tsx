@@ -1,61 +1,53 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import {
-  Common,
-  CommonProps,
-  Border,
-  BorderProps,
-  Background,
-  BackgroundProps,
-  Position,
-  PositionProps,
-  Typography,
-  TypographyProps,
-  removeNonHTMLProps,
-  HTMLButtonProps,
-  HTMLAnchorProps,
-  BODY_STYLE,
+  Box,
+  BoxProps,
+  DEFAULT_FONT_SIZES,
+  DEFAULT_LINE_HEIGHTS,
 } from '../internal';
 
-export type ButtonProps = CommonProps &
-  BorderProps &
-  BackgroundProps &
-  PositionProps &
-  TypographyProps &
-  HTMLButtonProps &
-  HTMLAnchorProps & {
-    level?: number;
-    full?: boolean;
-    to?: string;
-  };
+export type ButtonProps = BoxProps & {
+  level?: number;
+  full?: boolean;
+  disabled?: boolean;
+};
 
-export const Button = styled<React.FunctionComponent<ButtonProps>>((
-  props,
-) => props.to ? (
-  <Link to={props.to} {...removeNonHTMLProps(props)} />
-) : React.createElement(props.href ? 'a' : 'button', removeNonHTMLProps(props)))`
+const ButtonElement = styled(Box)<ButtonProps>`
   outline: none;
   cursor: pointer;
 
-  ${props => props.full && css`
-    display: block;
-    width: 100%;
-  `}
-  ${props => props.disabled && css`
-    cursor: not-allowed;
-    pointer-events: none;
-  `}
-  ${props => (props.to || props.href) && css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-  `}
-  ${props => props.level && BODY_STYLE[props.level]}
-  ${Typography}
-  ${Common}
-  ${Border}
-  ${Background}
-  ${Position}
+  &:active,
+  &:foucs {
+    outline: none;
+  }
+
+  ${props => props.disabled && {
+    cursor: 'not-allowed',
+  }}
 `;
+
+export const Button: React.FunctionComponent<ButtonProps> = (props) => {
+  const {
+    theme: {
+      fontSizes = DEFAULT_FONT_SIZES,
+      lineHeights = DEFAULT_LINE_HEIGHTS,
+      fonts: {
+        body = undefined,
+      } = {},
+    } = {},
+  } = props;
+
+  return (
+    <ButtonElement
+      as="button"
+      border="none"
+      fontFamily={body}
+      fontSize={fontSizes[props.level + 3]}
+      lineHeight={lineHeights[props.level + 3]}
+      display={props.full ? 'block' : undefined}
+      width={props.full ? '100%' : undefined}
+      {...props}
+    />
+  );
+};

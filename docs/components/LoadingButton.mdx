@@ -8,10 +8,7 @@ import {
   Playground,
   Props,
 } from 'docz';
-import {
-  Space,
-  LoadingButton,
-} from '@yeoubi/ui';
+import { LoadingButton } from '@yeoubi/ui';
 
 # LoadingButton
 
@@ -22,14 +19,32 @@ import {
 ## Usage
 
 <Playground>
-  <Space mr={16} ph={16} pv={8}>
-    <LoadingButton level={2} color="#FFFFFF" bgColor="#212121" loadingColor="#FFFFFF">
-      제출하기
-    </LoadingButton>
-  </Space>
-  <Space ph={16} pv={8}>
-    <LoadingButton level={2} color="#FFFFFF" bgColor="#212121" loadingColor="#FFFFFF" isLoading>
-      제출하기
-    </LoadingButton>
-  </Space>
+  <LoadingButton
+    mr={16}
+    ph={16}
+    pv={8}
+    level={2}
+    color="#FFFFFF"
+    bgColor="#212121"
+    loadingProps={{
+      border: '2px solid #FFFFFF',
+      size: 16,
+    }}
+  >
+    제출하기
+  </LoadingButton>
+  <LoadingButton
+    ph={16}
+    pv={8}
+    level={2}
+    color="#FFFFFF"
+    bgColor="#212121"
+    loadingProps={{
+      border: '2px solid #FFFFFF',
+      size: 16,
+    }}
+    isLoading
+  >
+    제출하기
+  </LoadingButton>
 </Playground>

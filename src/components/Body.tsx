@@ -1,64 +1,32 @@
 import React from 'react';
-import styled, {
-  css,
-  FlattenInterpolation,
-} from 'styled-components';
 import {
-  media,
-  Typography,
-  TypographyProps,
-  removeNonHTMLProps,
+  Box,
+  BoxProps,
+  DEFAULT_FONT_SIZES,
+  DEFAULT_LINE_HEIGHTS,
 } from '../internal';
 
-export const BODY_STYLE: {
-  [key: number]: FlattenInterpolation<any>;
-} = {
-  1: css`
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-
-    ${media.sm`
-      font-size: 1rem;
-      line-height: 1.5rem;
-    `}
-  `,
-  2: css`
-    font-size: 1rem;
-    line-height: 1.5rem;
-
-    ${media.sm`
-      font-size: 0.9375rem;
-      line-height: 1.4rem;
-    `}
-  `,
-  3: css`
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-
-    ${media.sm`
-      font-size: 0.8125rem;
-      line-height: 1.2rem;
-    `}
-  `,
-  4: css`
-    font-size: 0.75rem;
-    line-height: 1rem;
-
-    ${media.sm`
-      font-size: 0.6875rem;
-      line-height: 0.9rem;
-    `}
-  `,
-};
-
-export type BodyProps = TypographyProps & {
+export type BodyProps = BoxProps & {
   level: number;
 };
 
-export const Body = styled<React.FunctionComponent<BodyProps>>((
-  props,
-) => React.createElement('div', removeNonHTMLProps(props)))`
-  margin: 0;
-  ${props => BODY_STYLE[props.level]};
-  ${Typography}
-`;
+export const Body: React.FunctionComponent<BodyProps> = (props) => {
+  const {
+    theme: {
+      fontSizes = DEFAULT_FONT_SIZES,
+      lineHeights = DEFAULT_LINE_HEIGHTS,
+      fonts: {
+        body = undefined,
+      } = {},
+    } = {},
+  } = props;
+
+  return (
+    <Box
+      fontFamily={body}
+      fontSize={fontSizes[props.level + 3]}
+      lineHeight={lineHeights[props.level + 3]}
+      {...props}
+    />
+  );
+};

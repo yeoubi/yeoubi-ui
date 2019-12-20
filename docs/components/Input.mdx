@@ -8,10 +8,7 @@ import {
   Playground,
   Props,
 } from 'docz';
-import {
-  Input,
-  Space,
-} from '@yeoubi/ui';
+import { Input } from '@yeoubi/ui';
 
 # Input
 
@@ -20,16 +17,39 @@ import {
 ## Usage
 
 <Playground>
-  <Space mr={8} pv={8} ph={12}>
-    <Input level={1} placeholder="lorem ipsum" border="#EEEEEE" inline />
-  </Space>
-  <Space pv={8} ph={12}>
-    <Input level={1} type="password" placeholder="lorem ipsum" border="#EEEEEE" inline />
-  </Space>
-  <Space mt={8} pv={8} ph={12}>
-    <Input level={1} placeholder="lorem ipsum" border="#EEEEEE" full />
-  </Space>
-  <Space mt={8} pv={8} ph={12}>
-    <Input as="textarea" level={1} placeholder="lorem ipsum" border="#EEEEEE" />
-  </Space>
+  <Input
+    mr={8}
+    ph={12}
+    pv={8}
+    level={2}
+    placeholder="Lorem Ipsum"
+    border="#EEEEEE"
+  />
+  <Input
+    pv={8}
+    ph={12}
+    level={2}
+    type="password"
+    placeholder="Lorem Ipsum"
+    border="#EEEEEE"
+  />
+  <Input
+    mt={8}
+    ph={12}
+    pv={8}
+    level={2}
+    placeholder="Lorem Ipsum"
+    border="#EEEEEE"
+    full
+  />
+  <Input
+    as="textarea"
+    mt={8}
+    ph={12}
+    pv={8}
+    level={2}
+    rows={5}
+    placeholder="Lorem Ipsum"
+    border="#EEEEEE"
+  />
 </Playground>
