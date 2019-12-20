@@ -1,4 +1,7 @@
-import React, { forwardRef } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+} from 'react';
 import styled, { withTheme } from 'styled-components';
 import {
   Box,
@@ -15,6 +18,7 @@ export type InputProps = BoxProps & {
   value?: string;
   full?: boolean;
   ref?: any;
+  onChangeValue?: (value: string) => void;
 };
 
 const InputElement = styled(Box)<InputProps>`
@@ -37,8 +41,9 @@ const InputElement = styled(Box)<InputProps>`
 const InputComponent: React.FunctionComponent<InputProps & ThemeProps> = forwardRef((props, ref) => {
   const {
     level,
-    full,
     type,
+    full,
+    onChangeValue,
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
       lineHeights = DEFAULT_LINE_HEIGHTS,
@@ -47,6 +52,10 @@ const InputComponent: React.FunctionComponent<InputProps & ThemeProps> = forward
       } = {},
     } = {},
   } = props;
+
+  const onChange = useCallback(({ target }: React.ChangeEvent<any>) => {
+    onChangeValue && onChangeValue(target.value)
+  }, [onChangeValue]);
 
   return (
     <InputElement
@@ -59,6 +68,7 @@ const InputComponent: React.FunctionComponent<InputProps & ThemeProps> = forward
       autoCorrect="off"
       autoComplete="off"
       autoCapitalize="none"
+      onChange={onChange}
       {...props}
     />
   );

@@ -1,6 +1,6 @@
 import React, {
-  useCallback,
   forwardRef,
+  useCallback,
 } from 'react';
 import styled, { withTheme } from 'styled-components';
 import {
@@ -13,7 +13,9 @@ import {
 
 type ElementProps = BoxProps & {
   name?: string;
+  value?: any;
   ref?: any;
+  onChangeValue?: (value: any) => void;
 }
 
 export type OptionType = string | { label: string; value: any };
@@ -44,6 +46,7 @@ const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwa
     level,
     full,
     options,
+    onChangeValue,
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
       lineHeights = DEFAULT_LINE_HEIGHTS,
@@ -52,6 +55,10 @@ const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwa
       } = {},
     } = {},
   } = props;
+
+  const onChange = useCallback(({ target }: React.ChangeEvent<any>) => {
+    onChangeValue && onChangeValue(target.value)
+  }, [onChangeValue]);
 
   const renderOptions = useCallback((option: OptionType) => {
     if (typeof option === 'object') {
@@ -77,6 +84,7 @@ const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwa
       fontSize={fontSizes[level + 3]}
       lineHeight={lineHeights[level + 3]}
       width={full ? '100%' : undefined}
+      onChange={onChange}
       {...props}
     >
       {options.map(renderOptions)}
