@@ -1,6 +1,7 @@
 type PropertyConfig = {
   property?: string;
   properties?: string[];
+  transform?: (value: any) => any;
 };
 
 type StyleConfig = {
@@ -21,10 +22,6 @@ function mergeStyle(
   value: any,
   config: PropertyConfig,
 ) {
-  if (!value) {
-    return style;
-  }
-
   if (config.property) {
     return {
       ...style,
@@ -67,8 +64,13 @@ export function parse(styleConfig: StyleConfig) {
     return Object
       .entries(styleConfig)
       .reduce((style, [key, config]) => {
-        const value = props[key];
-        
+        if (props[key] === undefined) {
+          return style;
+        }
+
+        const transform = config.transform || (v => v);
+        const value = transform(props[key]);
+
         if (Array.isArray(value)) {
           const breakpoints = (props.theme && props.theme.breakpoints) || defaultBreakpoints;
           return mergeResponsiveStyle(breakpoints, style, value, config);
