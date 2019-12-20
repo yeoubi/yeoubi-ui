@@ -1,3 +1,5 @@
+import merge from 'lodash/merge';
+
 type PropertyConfig = {
   property?: string;
   properties?: string[];
@@ -23,20 +25,16 @@ function mergeStyle(
   config: PropertyConfig,
 ) {
   if (config.property) {
-    return {
-      ...style,
+    return merge(style, {
       [config.property]: value,
-    };
+    });
   }
 
   if (config.properties) {
-    return {
-      ...style,
-      ...config.properties.reduce((result, property) => ({
-        ...result,
-        [property]: value,
-      }), {}),
-    }
+    return merge(style, config.properties.reduce((result, property) => ({
+      ...result,
+      [property]: value,
+    }), {}));
   }
 
   return style;
@@ -50,13 +48,10 @@ function mergeResponsiveStyle(
 ) {
   const minWidth = (i: number) => breakpoints[Math.min(i, breakpoints.length - 1)];
 
-  return {
-    ...style,
-    ...values.reduce((result, value, i) => ({
-      ...result,
-      [`@media (min-width: ${minWidth(i)})`]: mergeStyle({}, value, config),
-    }), {}),
-  };
+  return merge(style, values.reduce((result, value, i) => ({
+    ...result,
+    [`@media (min-width: ${minWidth(i)})`]: mergeStyle({}, value, config),
+  }), {}));
 };
 
 export function parse(styleConfig: StyleConfig) {
