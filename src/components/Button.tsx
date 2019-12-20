@@ -8,7 +8,7 @@ import {
 } from '../internal';
 
 export type ButtonProps = BoxProps & {
-  level?: number;
+  level: number;
   full?: boolean;
   disabled?: boolean;
 };
