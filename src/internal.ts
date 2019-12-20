@@ -2,9 +2,6 @@ export * from './common/interfaces';
 export * from './common/GlobalStyle';
 export * from './common/Responsive';
 
-export * from './utils/removeNonHtmlProps';
-export * from './utils/toRem';
-
 export * from './composer/size';
 export * from './composer/space';
 export * from './composer/layout';
