@@ -38,12 +38,14 @@ const InputElement = styled(Box)<InputProps>`
   outline: none;
 `;
 
-const InputComponent: React.FunctionComponent<InputProps & ThemeProps> = forwardRef((props, ref) => {
+const InputComponent: React.FunctionComponent<InputProps & ThemeProps> = forwardRef(({
+  onChangeValue,
+  ...props
+}, ref) => {
   const {
     level,
     type,
     full,
-    onChangeValue,
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
       lineHeights = DEFAULT_LINE_HEIGHTS,

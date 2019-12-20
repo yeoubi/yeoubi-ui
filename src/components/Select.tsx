@@ -15,7 +15,6 @@ type ElementProps = BoxProps & {
   name?: string;
   value?: any;
   ref?: any;
-  onChangeValue?: (value: any) => void;
 }
 
 export type OptionType = string | { label: string; value: any };
@@ -24,6 +23,7 @@ export type SelectProps = ElementProps & {
   level: number;
   options: OptionType[];
   full?: boolean;
+  onChangeValue?: (value: any) => void;
 };
 
 const SelectElement = styled(Box)<ElementProps>`
@@ -41,12 +41,14 @@ const SelectElement = styled(Box)<ElementProps>`
   }
 `;
 
-const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwardRef((props, ref) => {
+const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwardRef(({
+  onChangeValue,
+  ...props
+}, ref) => {
   const {
     level,
     full,
     options,
-    onChangeValue,
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
       lineHeights = DEFAULT_LINE_HEIGHTS,
