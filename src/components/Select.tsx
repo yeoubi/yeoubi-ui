@@ -2,10 +2,11 @@ import React, {
   useCallback,
   forwardRef,
 } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import {
   Box,
   BoxProps,
+  ThemeProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
 } from '../internal';
@@ -38,7 +39,7 @@ const SelectElement = styled(Box)<ElementProps>`
   }
 `;
 
-export const Select: React.FunctionComponent<SelectProps> = forwardRef((props, ref) => {
+const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwardRef((props, ref) => {
   const {
     level,
     full,
@@ -82,3 +83,5 @@ export const Select: React.FunctionComponent<SelectProps> = forwardRef((props, r
     </SelectElement>
   );
 });
+
+export const Select = withTheme(SelectComponent);

@@ -2,6 +2,7 @@ export interface Theme {
   fonts: {
     heading: string;
     body: string;
+    [key: string]: string;
   },
   fontSizes: number[];
   lineHeights: number[];

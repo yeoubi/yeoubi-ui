@@ -1,7 +1,9 @@
 import React from 'react';
+import { withTheme } from 'styled-components';
 import {
   Box,
   BoxProps,
+  ThemeProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
 } from '../internal';
@@ -10,7 +12,7 @@ export type BodyProps = BoxProps & {
   level: number;
 };
 
-export const Body: React.FunctionComponent<BodyProps> = (props) => {
+const BodyComponent: React.FunctionComponent<BodyProps & ThemeProps> = (props) => {
   const {
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
@@ -30,3 +32,5 @@ export const Body: React.FunctionComponent<BodyProps> = (props) => {
     />
   );
 };
+
+export const Body = withTheme(BodyComponent);

@@ -34,12 +34,8 @@ export const LoadingButton: React.FunctionComponent<LoadingButtonProps> = ({
         justifyContent="center"
         alignItems="center"
         bgColor={props.bgColor}
-        theme={props.theme}
       >
-        <Loading
-          {...loadingProps}
-          theme={props.theme}
-        />
+        <Loading {...loadingProps} />
       </Flex>
     )}
   </Button>

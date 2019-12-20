@@ -1,7 +1,9 @@
 import React from 'react';
+import { withTheme } from 'styled-components';
 import {
   Box,
   BoxProps,
+  ThemeProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
 } from '../internal';
@@ -10,7 +12,7 @@ export type HeadingProps = BoxProps & {
   level: number;
 };
 
-export const Heading: React.FunctionComponent<HeadingProps> = (props) => {
+const HeadingComponent: React.FunctionComponent<HeadingProps & ThemeProps> = (props) => {
   const {
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
@@ -32,3 +34,5 @@ export const Heading: React.FunctionComponent<HeadingProps> = (props) => {
     />
   );
 };
+
+export const Heading = withTheme(HeadingComponent);

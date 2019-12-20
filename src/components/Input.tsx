@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import {
   Box,
   BoxProps,
+  ThemeProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
 } from '../internal';
@@ -33,7 +34,7 @@ const InputElement = styled(Box)<InputProps>`
   outline: none;
 `;
 
-export const Input: React.FunctionComponent<InputProps> = forwardRef((props, ref) => {
+const InputComponent: React.FunctionComponent<InputProps & ThemeProps> = forwardRef((props, ref) => {
   const {
     level,
     full,
@@ -62,3 +63,5 @@ export const Input: React.FunctionComponent<InputProps> = forwardRef((props, ref
     />
   );
 });
+
+export const Input = withTheme(InputComponent);

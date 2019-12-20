@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import {
   Box,
   BoxProps,
+  ThemeProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
 } from '../internal';
@@ -27,7 +28,7 @@ const ButtonElement = styled(Box)<ButtonProps>`
   }}
 `;
 
-export const Button: React.FunctionComponent<ButtonProps> = (props) => {
+const ButtonComponent: React.FunctionComponent<ButtonProps & ThemeProps> = (props) => {
   const {
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
@@ -51,3 +52,5 @@ export const Button: React.FunctionComponent<ButtonProps> = (props) => {
     />
   );
 };
+
+export const Button = withTheme(ButtonComponent);

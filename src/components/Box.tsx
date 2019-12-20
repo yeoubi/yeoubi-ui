@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import {
   size,
   space,
@@ -26,12 +26,11 @@ export type BoxProps = SizeProps &
   BorderProps &
   BackgroundProps &
   PositionProps &
-  TypographyProps & 
-  ThemeProps & {
+  TypographyProps & {
     as?: any;
   };
 
-export const Box: React.FunctionComponent<BoxProps> = styled.div<BoxProps>`
+const BoxComponent: React.FunctionComponent<BoxProps & ThemeProps> = styled.div<BoxProps>`
   ${size}
   ${space}
   ${layout}
@@ -41,3 +40,5 @@ export const Box: React.FunctionComponent<BoxProps> = styled.div<BoxProps>`
   ${position}
   ${typography}
 `;
+
+export const Box = withTheme(BoxComponent);
