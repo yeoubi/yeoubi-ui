@@ -15,7 +15,7 @@ type StyleFunction = {
   config?: StyleConfig;
 };
 
-export type ResponsiveValue<T> = T | T[];
+export type ResponsiveValue<T> = T | (T | undefined)[];
 
 const defaultBreakpoints = [0, 40, 64].map(n => `${n}rem`);
 
