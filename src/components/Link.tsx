@@ -35,12 +35,15 @@ export type LinkProps = SizeProps &
   BackgroundProps &
   PositionProps &
   TypographyProps &
-  RouterLinkProps & {
+  Partial<RouterLinkProps> & {
     level?: number;
     full?: boolean;
+    href?: string;
   };
 
-const LinkElement: React.FunctionComponent<LinkProps> = styled((props: LinkProps) => (
+const LinkElement: React.FunctionComponent<any> = styled(props => props.href ? (
+  <a {...removeInvalidProps(props)} />
+) : (
   <RouterLink {...removeInvalidProps(props)} />
 ))`
   display: inline-flex;
