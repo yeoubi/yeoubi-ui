@@ -3,6 +3,7 @@ import {
   size,
   space,
   layout,
+  flexbox,
   color,
   border,
   background,
@@ -11,6 +12,7 @@ import {
   SizeProps,
   SpaceProps,
   LayoutProps,
+  FlexboxProps,
   ColorProps,
   BorderProps,
   BackgroundProps,
@@ -22,6 +24,7 @@ import {
 export type BoxProps = SizeProps &
   SpaceProps &
   LayoutProps &
+  FlexboxProps &
   ColorProps &
   BorderProps &
   BackgroundProps &
@@ -34,6 +37,7 @@ const BoxComponent: React.FunctionComponent<BoxProps & ThemeProps> = styled.div<
   ${size}
   ${space}
   ${layout}
+  ${flexbox}
   ${color}
   ${border}
   ${background}

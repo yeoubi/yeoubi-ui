@@ -8,6 +8,7 @@ import {
   size,
   space,
   layout,
+  flexbox,
   color,
   border,
   background,
@@ -16,6 +17,7 @@ import {
   SizeProps,
   SpaceProps,
   LayoutProps,
+  FlexboxProps,
   ColorProps,
   BorderProps,
   BackgroundProps,
@@ -30,6 +32,7 @@ import {
 export type LinkProps = SizeProps &
   SpaceProps &
   LayoutProps &
+  FlexboxProps &
   ColorProps &
   BorderProps &
   BackgroundProps &
@@ -59,6 +62,7 @@ const LinkElement: React.FunctionComponent<any> = styled(props => props.href ? (
   ${size}
   ${space}
   ${layout}
+  ${flexbox}
   ${color}
   ${border}
   ${background}
