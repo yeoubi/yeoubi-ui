@@ -6,6 +6,7 @@ import {
   ThemeProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
+  DEFAULT_BREAKPOINTS,
 } from '../internal';
 
 export type HeadingProps = BoxProps & {
@@ -17,6 +18,7 @@ const HeadingComponent: React.FunctionComponent<HeadingProps & ThemeProps> = (pr
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
       lineHeights = DEFAULT_LINE_HEIGHTS,
+      breakpoints = DEFAULT_BREAKPOINTS,
       fonts: {
         heading = undefined,
       } = {},
@@ -27,8 +29,8 @@ const HeadingComponent: React.FunctionComponent<HeadingProps & ThemeProps> = (pr
     <Box
       as={`h${props.level}`}
       fontFamily={heading}
-      fontSize={fontSizes.slice(props.level - 1)}
-      lineHeight={lineHeights.slice(props.level - 1)}
+      fontSize={fontSizes.slice(props.level - 1, props.level - 1 + breakpoints.length).reverse()}
+      lineHeight={lineHeights.slice(props.level - 1, props.level - 1 + breakpoints.length).reverse()}
       m={0}
       {...props}
     />

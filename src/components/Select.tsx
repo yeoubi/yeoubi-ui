@@ -9,6 +9,7 @@ import {
   ThemeProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
+  DEFAULT_BREAKPOINTS,
 } from '../internal';
 
 type ElementProps = BoxProps & {
@@ -46,17 +47,19 @@ const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwa
   ...props
 }, ref) => {
   const {
-    level,
     full,
     options,
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
       lineHeights = DEFAULT_LINE_HEIGHTS,
+      breakpoints = DEFAULT_BREAKPOINTS,
       fonts: {
         body = undefined,
       } = {},
     } = {},
   } = props;
+
+  const level = props.level + 3;
 
   const onChange = useCallback(({ target }: React.ChangeEvent<any>) => {
     onChangeValue && onChangeValue(target.value)
@@ -83,8 +86,8 @@ const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwa
       as="select"
       ref={ref}
       fontFamily={body}
-      fontSize={fontSizes.slice(props.level + 3)}
-      lineHeight={lineHeights.slice(props.level + 3)}
+      fontSize={fontSizes.slice(level, level + breakpoints.length).reverse()}
+      lineHeight={lineHeights.slice(level, level + breakpoints.length).reverse()}
       width={full ? '100%' : undefined}
       onChange={onChange}
       {...props}

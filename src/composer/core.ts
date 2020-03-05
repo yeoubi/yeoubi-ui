@@ -1,4 +1,5 @@
 import merge from 'lodash/merge';
+import { DEFAULT_BREAKPOINTS } from '../internal'
 
 type PropertyConfig = {
   property?: string;
@@ -16,8 +17,6 @@ type StyleFunction = {
 };
 
 export type ResponsiveValue<T> = T | (T | undefined)[];
-
-const defaultBreakpoints = [0, 40, 64].map(n => `${n}rem`);
 
 function mergeStyle(
   style: any,
@@ -67,7 +66,7 @@ export function parse(styleConfig: StyleConfig) {
         }
 
         if (Array.isArray(value)) {
-          const breakpoints = (props.theme && props.theme.breakpoints) || defaultBreakpoints;
+          const breakpoints = (props.theme && props.theme.breakpoints) || DEFAULT_BREAKPOINTS;
           return mergeResponsiveStyle(breakpoints, style, value.map(v => transform(v)), config);
         }
 

@@ -7,6 +7,7 @@ import {
   HTMLButtonProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
+  DEFAULT_BREAKPOINTS,
 } from '../internal';
 
 export type ButtonProps = BoxProps &
@@ -35,19 +36,22 @@ const ButtonComponent: React.FunctionComponent<ButtonProps & ThemeProps> = (prop
     theme: {
       fontSizes = DEFAULT_FONT_SIZES,
       lineHeights = DEFAULT_LINE_HEIGHTS,
+      breakpoints = DEFAULT_BREAKPOINTS,
       fonts: {
         body = undefined,
       } = {},
     } = {},
   } = props;
 
+  const level = props.level + 3;
+
   return (
     <ButtonElement
       as="button"
       border="none"
       fontFamily={body}
-      fontSize={fontSizes.slice(props.level + 3)}
-      lineHeight={lineHeights.slice(props.level + 3)}
+      fontSize={fontSizes.slice(level, level + breakpoints.length).reverse()}
+      lineHeight={lineHeights.slice(level, level + breakpoints.length).reverse()}
       display={props.full ? 'block' : undefined}
       width={props.full ? '100%' : undefined}
       {...props}
