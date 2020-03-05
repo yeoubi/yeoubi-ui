@@ -1,12 +1,9 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
 const Wrapper = ({ children }) => (
-  <BrowserRouter>
-    <React.Fragment>
-      {children}
-    </React.Fragment>
-  </BrowserRouter>
+  <React.Fragment>
+    {children}
+  </React.Fragment>
 );
 
 export default Wrapper;

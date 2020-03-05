@@ -9,8 +9,6 @@ export {
   BodyProps,
   Button,
   ButtonProps,
-  Link,
-  LinkProps,
   Image,
   ImageProps,
   Input,
