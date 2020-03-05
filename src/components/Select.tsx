@@ -83,8 +83,8 @@ const SelectComponent: React.FunctionComponent<SelectProps & ThemeProps> = forwa
       as="select"
       ref={ref}
       fontFamily={body}
-      fontSize={fontSizes[level + 3]}
-      lineHeight={lineHeights[level + 3]}
+      fontSize={fontSizes.slice(props.level + 3)}
+      lineHeight={lineHeights.slice(props.level + 3)}
       width={full ? '100%' : undefined}
       onChange={onChange}
       {...props}

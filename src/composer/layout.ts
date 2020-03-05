@@ -17,7 +17,7 @@ const config = {
 
 export type LayoutProps = {
   display?: ResponsiveValue<string>;
-  flex?: ResponsiveValue<number>;
+  flex?: ResponsiveValue<number | string>;
   overflow?: ResponsiveValue<string>;
 };
 

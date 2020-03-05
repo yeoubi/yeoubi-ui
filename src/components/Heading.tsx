@@ -27,8 +27,8 @@ const HeadingComponent: React.FunctionComponent<HeadingProps & ThemeProps> = (pr
     <Box
       as={`h${props.level}`}
       fontFamily={heading}
-      fontSize={fontSizes[props.level - 1]}
-      lineHeight={lineHeights[props.level - 1]}
+      fontSize={fontSizes.slice(props.level - 1)}
+      lineHeight={lineHeights.slice(props.level - 1)}
       m={0}
       {...props}
     />

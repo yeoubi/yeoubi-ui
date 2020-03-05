@@ -26,8 +26,8 @@ const BodyComponent: React.FunctionComponent<BodyProps & ThemeProps> = (props) =
   return (
     <Box
       fontFamily={body}
-      fontSize={fontSizes[props.level + 3]}
-      lineHeight={lineHeights[props.level + 3]}
+      fontSize={fontSizes.slice(props.level + 3)}
+      lineHeight={lineHeights.slice(props.level + 3)}
       {...props}
     />
   );

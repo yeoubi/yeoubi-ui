@@ -7,19 +7,21 @@ import {
   Box,
   BoxProps,
   ThemeProps,
+  HTMLInputProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
 } from '../internal';
 
-export type InputProps = BoxProps & {
-  level: number;
-  type?: string;
-  name?: string;
-  value?: string;
-  full?: boolean;
-  ref?: any;
-  onChangeValue?: (value: string) => void;
-};
+export type InputProps = BoxProps &
+  HTMLInputProps & {
+    level: number;
+    type?: string;
+    name?: string;
+    value?: string;
+    full?: boolean;
+    ref?: any;
+    onChangeValue?: (value: string) => void;
+  };
 
 const InputElement = styled(Box)<InputProps>`
   ::placeholder,
@@ -64,8 +66,8 @@ const InputComponent: React.FunctionComponent<InputProps & ThemeProps> = forward
       as={type === 'textarea' ? 'textarea' : 'input'}
       ref={ref}
       fontFamily={body}
-      fontSize={fontSizes[level + 3]}
-      lineHeight={lineHeights[level + 3]}
+      fontSize={fontSizes.slice(props.level + 3)}
+      lineHeight={lineHeights.slice(props.level + 3)}
       width={full ? '100%' : undefined}
       autoCorrect="off"
       autoComplete="off"

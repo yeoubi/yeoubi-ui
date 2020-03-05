@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
   input {
     outline: none;
+    border: none;
 
     &:active,
     &:focus {

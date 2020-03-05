@@ -4,15 +4,17 @@ import {
   Box,
   BoxProps,
   ThemeProps,
+  HTMLButtonProps,
   DEFAULT_FONT_SIZES,
   DEFAULT_LINE_HEIGHTS,
 } from '../internal';
 
-export type ButtonProps = BoxProps & {
-  level: number;
-  full?: boolean;
-  disabled?: boolean;
-};
+export type ButtonProps = BoxProps &
+  HTMLButtonProps & {
+    level: number;
+    full?: boolean;
+    disabled?: boolean;
+  };
 
 const ButtonElement = styled(Box)<ButtonProps>`
   outline: none;
@@ -44,8 +46,8 @@ const ButtonComponent: React.FunctionComponent<ButtonProps & ThemeProps> = (prop
       as="button"
       border="none"
       fontFamily={body}
-      fontSize={fontSizes[props.level + 3]}
-      lineHeight={lineHeights[props.level + 3]}
+      fontSize={fontSizes.slice(props.level + 3)}
+      lineHeight={lineHeights.slice(props.level + 3)}
       display={props.full ? 'block' : undefined}
       width={props.full ? '100%' : undefined}
       {...props}
