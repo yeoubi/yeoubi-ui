@@ -23,4 +23,5 @@ export {
   SelectProps,
   Theme,
   ThemeProps,
+  GlobalStyle,
 } from './internal';
