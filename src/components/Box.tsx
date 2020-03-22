@@ -31,6 +31,7 @@ export type BoxProps = SizeProps &
   PositionProps &
   TypographyProps & {
     as?: any;
+    style?: any;
   };
 
 const BoxComponent: React.FunctionComponent<BoxProps & ThemeProps> = styled.div`

@@ -17,6 +17,7 @@ export * from './composer/theme';
 
 export * from './components/Box';
 export * from './components/Flex';
+export * from './components/Form';
 export * from './components/Heading';
 export * from './components/Body';
 export * from './components/Button';
@@ -25,3 +26,4 @@ export * from './components/Input';
 export * from './components/Loading';
 export * from './components/LoadingButton';
 export * from './components/Select';
+export * from './components/TextArea';
